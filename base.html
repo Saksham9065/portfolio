@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Saksham Prajapati — Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+
+      --bg: #030712;
+      --bg-secondary: #0f172a;
+
+      --card: rgba(15, 23, 42, 0.72);
+
+      --text: #f8fafc;
+      --text-secondary: #94a3b8;
+
+      --border: rgba(255, 255, 255, 0.08);
+
+      --primary: #8b5cf6;
+      --primary-light: #a78bfa;
+
+      --glow: rgba(139, 92, 246, 0.35);
+    }
+
+    body {
+
+      font-family: 'Poppins', sans-serif;
+
+      background:
+        radial-gradient(circle at top right,
+          rgba(139, 92, 246, 0.15),
+          transparent 30%),
+
+        radial-gradient(circle at bottom left,
+          rgba(59, 130, 246, 0.12),
+          transparent 30%),
+
+        var(--bg);
+
+      color: var(--text);
+
+      line-height: 1.7;
+
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    nav {
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(3, 7, 18, 0.65);
+
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav ul {
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 1.5rem;
+
+      list-style: none;
+
+      padding: 1rem;
+    }
+
+    nav a {
+
+      color: var(--text-secondary);
+
+      font-weight: 500;
+
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-light);
+    }
+
+    /* HERO */
+
+    .hero {
+
+      min-height: 90vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 2rem;
+
+      position: relative;
+    }
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      background: var(--glow);
+
+      border-radius: 50%;
+
+      filter: blur(140px);
+
+      top: -200px;
+      right: -150px;
+
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content img {
+
+      width: 180px;
+      height: 180px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      border: 4px solid rgba(255,255,255,0.08);
+
+      margin-bottom: 1.5rem;
+
+      box-shadow:
+        0 0 40px rgba(139, 92, 246, 0.25);
+    }
+
+    .hero h1 {
+
+      font-size: 4rem;
+
+      font-weight: 700;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 1rem;
+    }
+
+    .hero-text {
+
+      max-width: 700px;
+
+      margin: auto;
+
+      color: var(--text-secondary);
+
+      font-size: 1.1rem;
+    }
+
+    .typing-text {
+
+      margin-top: 1.2rem;
+
+      color: var(--primary-light);
+
+      font-weight: 500;
+
+      font-size: 1rem;
+    }
+
+    /* BUTTONS */
+
+    .btn-group {
+
+      margin-top: 2rem;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn {
+
+      padding: 0.95rem 1.8rem;
+
+      border-radius: 14px;
+
+      font-weight: 600;
+
+      transition: 0.3s ease;
+
+      border: 1px solid transparent;
+    }
+
+    .primary-btn {
+
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-light)
+      );
+
+      color: white;
+
+      box-shadow:
+        0 10px 30px rgba(139, 92, 246, 0.3);
+    }
+
+    .primary-btn:hover {
+
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 20px 40px rgba(139, 92, 246, 0.4);
+    }
+
+    /* SOCIAL ICONS */
+
+    .social-icons {
+
+      margin-top: 2rem;
+
+      display: flex;
+      justify-content: center;
+
+      gap: 1rem;
+    }
+
+    .social-icons a {
+
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 18px;
+
+      background: rgba(15, 23, 42, 0.75);
+
+      backdrop-filter: blur(12px);
+
+      border: 1px solid var(--border);
+
+      color: var(--text);
+
+      font-size: 1.3rem;
+
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+
+      transform: translateY(-8px);
+
+      border-color: rgba(139, 92, 246, 0.5);
+
+      box-shadow:
+        0 10px 30px rgba(139, 92, 246, 0.25);
+
+      color: var(--primary-light);
+    }
+
+    /* CONTAINER */
+
+    .container {
+
+      width: min(1100px, 90%);
+
+      margin: auto;
+
+      padding: 5rem 0;
+    }
+
+    /* SECTION */
+
+    section {
+
+      opacity: 0;
+
+      transform: translateY(40px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+      margin-bottom: 5rem;
+    }
+
+    section.visible {
+
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* TITLES */
+
+    h2 {
+
+      font-size: 2.4rem;
+
+      margin-bottom: 2rem;
+
+      font-weight: 700;
+
+      letter-spacing: -1px;
+    }
+
+    /* GRID */
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+      gap: 1.5rem;
+    }
+
+    /* CARDS */
+
+    .card {
+
+      background: var(--card);
+
+      backdrop-filter: blur(16px);
+
+      border: 1px solid var(--border);
+
+      padding: 1.7rem;
+
+      border-radius: 24px;
+
+      transition: all 0.35s ease;
+    }
+
+    .card:hover {
+
+      transform:
+        translateY(-10px)
+        scale(1.02);
+
+      border-color:
+        rgba(139, 92, 246, 0.35);
+
+      box-shadow:
+        0 20px 60px rgba(139, 92, 246, 0.18);
+    }
+
+    .card strong {
+      color: var(--primary-light);
+    }
+
+    .project-links {
+
+      margin-top: 1rem;
+
+      display: flex;
+
+      gap: 1rem;
+    }
+
+    .project-links a {
+
+      color: var(--primary-light);
+
+      font-weight: 500;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline li {
+
+      list-style: none;
+
+      margin-bottom: 1.5rem;
+
+      background: var(--card);
+
+      backdrop-filter: blur(16px);
+
+      border: 1px solid var(--border);
+
+      padding: 1.5rem;
+
+      border-radius: 24px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+
+      background: var(--card);
+
+      backdrop-filter: blur(16px);
+
+      border: 1px solid var(--border);
+
+      padding: 2rem;
+
+      border-radius: 24px;
+
+      text-align: center;
+    }
+
+    .contact-box p {
+      margin: 0.8rem 0;
+    }
+
+    /* FOOTER */
+
+    footer {
+
+      text-align: center;
+
+      padding: 2rem;
+
+      color: var(--text-secondary);
+
+      border-top: 1px solid var(--border);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+      .hero {
+        padding-top: 6rem;
+      }
+
+      .hero h1 {
+        font-size: 2.7rem;
+      }
+
+      .hero-content img {
+
+        width: 140px;
+        height: 140px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+
+      .typing-text {
+        font-size: 0.9rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <ul>
+
+      <li><a href="#about">About</a></li>
+
+      <li><a href="#skills">Skills</a></li>
+
+      <li><a href="#projects">Projects</a></li>
+
+      <li><a href="#experience">Experience</a></li>
+
+      <li><a href="#education">Education</a></li>
+
+      <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <img src="saksham.png" alt="Saksham Prajapati">
+
+      <h1>Saksham Prajapati</h1>
+
+      <p class="hero-text">
+
+        B.Tech Information Technology Student at MMMUT Gorakhpur passionate about
+        Web Development, Problem Solving, Cybersecurity, and AI/ML.
+
+      </p>
+
+      <p class="typing-text">
+
+        Web Developer • Cybersecurity Enthusiast • AI/ML Learner
+
+      </p>
+
+      <div class="btn-group">
+
+        <a href="#projects" class="btn primary-btn">
+
+          View Projects
+
+        </a>
+
+      </div>
+
+      <!-- SOCIAL ICONS -->
+
+      <div class="social-icons">
+
+        <a href="https://github.com/Saksham9065"
+          target="_blank"
+          title="GitHub">
+
+          <i class="fab fa-github"></i>
+
+        </a>
+
+        <a href="https://linkedin.com/in/saksham90651207"
+          target="_blank"
+          title="LinkedIn">
+
+          <i class="fab fa-linkedin"></i>
+
+        </a>
+
+        <a href="mailto:saksham906527@gmail.com"
+          title="Email">
+
+          <i class="fas fa-envelope"></i>
+
+        </a>
+
+        <a href="resumes.pdf"
+          target="_blank"
+          title="Resume">
+
+          <i class="fas fa-file-download"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MAIN -->
+
+  <div class="container">
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <h2>About Me</h2>
+
+      <p>
+
+        I am a motivated and detail-oriented Information Technology undergraduate
+        with strong interests in coding, development, and real-world problem solving.
+        I enjoy learning modern technologies, collaborating in teams, and building
+        impactful digital experiences.
+
+      </p>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+      <h2>Skills</h2>
+
+      <div class="grid">
+
+        <div class="card">
+
+          <strong>Programming</strong>
+
+          <p>C, C++, JavaScript</p>
+
+        </div>
+
+        <div class="card">
+
+          <strong>Frontend</strong>
+
+          <p>HTML, CSS, Tailwind CSS</p>
+
+        </div>
+
+        <div class="card">
+
+          <strong>Tools</strong>
+
+          <p>Git, GitHub, VS Code, Canva</p>
+
+        </div>
+
+        <div class="card">
+
+          <strong>Interests</strong>
+
+          <p>Cybersecurity, AI/ML, Web Development</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+      <h2>Projects</h2>
+
+      <div class="grid">
+
+        <div class="card">
+
+          <strong>My Portfolio</strong>
+
+          <p>
+
+            Personal portfolio website showcasing projects,
+            skills, and experience.
+
+          </p>
+
+          <div class="project-links">
+
+            <a href="https://github.com/Saksham9065"
+              target="_blank">
+
+              Code
+
+            </a>
+
+            <a href="https://saksham9065.github.io/MyPortfolio/base.html"
+              target="_blank">
+
+              Live Demo
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+      <h2>Experience</h2>
+
+      <ul class="timeline">
+
+        <li>
+
+          <strong>Volunteer — GDG Orientation</strong><br>
+
+          Aug 2025
+
+          <p>
+
+            Managed and guided new students during orientation events.
+
+          </p>
+
+        </li>
+
+      </ul>
+
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+      <h2>Education</h2>
+
+      <div class="grid">
+
+        <div class="card">
+
+          <strong>B.Tech IT</strong>
+
+          <p>MMMUT, Gorakhpur (2025–2028)</p>
+
+        </div>
+
+        <div class="card">
+
+          <strong>Diploma</strong>
+
+          <p>Government Polytechnic Lucknow (2021–2024)</p>
+
+        </div>
+
+        <div class="card">
+
+          <strong>Intermediate</strong>
+
+          <p>Morning Star Children's Academy, Orai (2021)</p>
+
+        </div>
+
+        <div class="card">
+
+          <strong>High School</strong>
+
+          <p>Shri Vinayak Academy, Orai (2019)</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <h2>Contact</h2>
+
+      <div class="contact-box">
+
+        <p>
+
+          Email:
+          <a href="mailto:saksham906527@gmail.com">
+
+            saksham906527@gmail.com
+
+          </a>
+
+        </p>
+
+        <p>
+
+          Phone:
+          <a href="tel:+918840735746">
+
+            +91 8840735746
+
+          </a>
+
+        </p>
+
+        <p>
+
+          GitHub:
+          <a href="https://github.com/Saksham9065"
+            target="_blank">
+
+            github.com/Saksham9065
+
+          </a>
+
+        </p>
+
+        <p>
+
+          Portfolio:
+          <a href="https://saksham9065.github.io/MyPortfolio/base.html"
+            target="_blank">
+
+            View Live Portfolio
+
+          </a>
+
+        </p>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Saksham Prajapati • Built with HTML, CSS & JavaScript
+
+  </footer>
+
+  <!-- ANIMATION -->
+
+  <script>
+
+    const sections = document.querySelectorAll('section');
+
+    function revealSections() {
+
+      const trigger = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+
+        const top = section.getBoundingClientRect().top;
+
+        if (top < trigger) {
+
+          section.classList.add('visible');
+        }
+
+      });
+    }
+
+    window.addEventListener('scroll', revealSections);
+
+    revealSections();
+
+  </script>
+
+</body>
+
+</html>
